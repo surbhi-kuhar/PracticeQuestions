@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int bang(int x) {
-    return ((x | (~x + 1)) >> 31) + 1;
+  int tmp = (((~x + 1) | x) >> 31);
+  return tmp + 1;
 }
 
 int main()
