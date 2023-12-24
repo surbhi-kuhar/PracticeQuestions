@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int conditional(int x, int y, int z) {
-    int mask = ((!x) + ~0) >> 31;  
-    return (y & mask) | (z & ~mask);
+  int a = (x >> 31) | ((~x + 1) >> 31);
+  return ((a & y) + (~a & z));
 }
 
 int main() {
